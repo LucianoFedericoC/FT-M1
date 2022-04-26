@@ -83,7 +83,7 @@ console.log(pm); // "Franco"
 "$" + 4 + 5 // "$45"
 "4" - 2 // 2
 "4px" - 2 // Nan
-7 / 0 //
+7 / 0 // infinito
 {}[0] // [0]
 parseInt("09") // 89
 5 && 2 // 2
@@ -104,8 +104,8 @@ parseInt("09") // 89
 
 ```javascript
 function test() {
-   console.log(a);
-   console.log(foo());
+   console.log(a); // undefined
+   console.log(foo()); // 2
 
    var a = 1;
    function foo() {
@@ -124,9 +124,9 @@ var snack = 'Meow Mix';
 function getFood(food) {
     if (food) {
         var snack = 'Friskies';
-        return snack;
+        return snack; 
     }
-    return snack;
+    return snack; // Undefined
 }
 
 getFood(false);
@@ -149,11 +149,11 @@ var obj = {
    }
 };
 
-console.log(obj.prop.getFullname());
+console.log(obj.prop.getFullname()); // 'Aurelio De Rosa'
 
 var test = obj.prop.getFullname;
 
-console.log(test());
+console.log(test()); // 'Juan Perez'
 ```
 
 ### Event loop
@@ -162,10 +162,10 @@ Considerando el siguiente código, ¿Cuál sería el orden en el que se muestra 
 
 ```javascript
 function printing() {
-   console.log(1);
-   setTimeout(function() { console.log(2); }, 1000);
-   setTimeout(function() { console.log(3); }, 0);
-   console.log(4);
+   console.log(1); // 1
+   setTimeout(function() { console.log(2); }, 1000); // 4
+   setTimeout(function() { console.log(3); }, 0); // 3
+   console.log(4); // 2
 }
 
 printing();
