@@ -32,8 +32,8 @@ console.log(x); // 1
 ```
 
 ```javascript
-console.log(bar); // 1
-console.log(baz); // 2
+console.log(bar); // Undefined
+console.log(baz); // Error
 foo(); // Hola!
 function foo() { console.log('Hola!'); }
 var bar = 1;
@@ -85,10 +85,10 @@ console.log(pm); // "Franco"
 "4px" - 2 // Nan
 7 / 0 // infinito
 {}[0] // [0]
-parseInt("09") // 89
+parseInt("09") // 09
 5 && 2 // 2
 2 && 5 // 5
-5 || 0 // 0
+5 || 0 // 5
 0 || 5 // 5
 [3]+[3]-[10] // 23
 3>2>1 // false
@@ -153,7 +153,7 @@ console.log(obj.prop.getFullname()); // 'Aurelio De Rosa'
 
 var test = obj.prop.getFullname;
 
-console.log(test()); // 'Juan Perez'
+console.log(test()); // Undefined
 ```
 
 ### Event loop
