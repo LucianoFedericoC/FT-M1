@@ -75,13 +75,13 @@ function crearCadena(delimitadorIzquierda, delimitadorDerecha, cadena) {
 // Modificar los undefined por el código correspondiente en cada caso
 // Pista, tenes que usar bind para "bindear" algunos parámetros de la función crearCadena.
 
-let textoAsteriscos = crearCadena.bind(crearCadena, "*", "*");
+let textoAsteriscos = crearCadena.bind(undefined, "*", "*");
 textoAsteriscos();
 
-let textoGuiones = crearCadena.bind(crearCadena, "-", "-");
+let textoGuiones = crearCadena.bind(undefined, "-", "-");
 textoGuiones();
 
-let textoUnderscore = crearCadena.bind(crearCadena, "_", "_");
+let textoUnderscore = crearCadena.bind(undefined, "_", "_");
 textoUnderscore();
 
 
