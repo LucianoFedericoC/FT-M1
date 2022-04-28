@@ -13,7 +13,6 @@ function nFactorial(n) {
   if (n > -1 && n < 2) { return 1 }
   return n * nFactorial(n - 1)
 }
-
 function nFibonacci(n) {
   // Secuencia de Fibonacci: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144,…
   // Retorna el enésimo numero de la serie
@@ -31,13 +30,21 @@ function nFibonacci(n) {
 // size: Devuelve el número de elementos que contiene la queue.
 
 function Queue() {
-this.elementos = []
+  this.elementos = []
+  this.top = 0;
 
 
+  Queue.prototype.enqueue = function (agregar) {
+    this.elementos[this.elementos.length] = agregar;
+  }
 
-Queue.prototype.enqueue = function (agregar) {this.elementos.push(agregar)}
-Queue.prototype.dequeue = function () {this.elementos.shift(); }
-Queue.prototype.size = function() {return this.elementos.length}
+  Queue.prototype.dequeue = function () {
+    var eliminado = this.elementos[0]
+    this.elementos.shift()
+    return eliminado;
+  }
+
+  Queue.prototype.size = function () { return this.elementos.length }
 
 
 }
