@@ -9,7 +9,14 @@
 // corre breadth-first cuando breadthFirstForEach() es ejecutado
 // Observar imagen de la carpeta "homework" llamada "bst.png". Allí encontraran dibujado el arbol utilizado para los tests
 function BinarySearchTree() {
+this.valor = []
+this.left = null
+this.right = null
+}
 
+BinarySearchTree.prototype.insert = function(valor) {
+var arbol = this
+this.add(valor)
 }
 
 // No modifiquen nada debajo de esta linea
