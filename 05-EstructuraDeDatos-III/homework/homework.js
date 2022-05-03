@@ -109,6 +109,11 @@ BinarySearchTree.prototype.depthFirstForEach = function (fn, order) {
 }
 
 BinarySearchTree.prototype.breadthFirstForEach = function (fn, queue) {
+  
+  // Paso 1 - Invoco a la funcion.
+  // Paso 2 - Agrego los hijos a la cola.
+  // Paso 3 - Invoco BFE en el elemento proximo a la cola.
+  
   if (queue == null) var queue = []
 
   fn(this.value)
@@ -121,6 +126,7 @@ BinarySearchTree.prototype.breadthFirstForEach = function (fn, queue) {
   }
 
 }
+
 
 BinarySearchTree.prototype.size = function () {
   var suma = 1
